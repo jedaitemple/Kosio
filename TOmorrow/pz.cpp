@@ -25,3 +25,17 @@ void Book::setname(const char* str)
         }
         delete [] old_buffer;
     }
+ void Add_egg(const EGG& EG1){
+	  
+     EGG* old_buffer=egg;
+	if(egg !=0){
+		delete [] egg;
+	}
+        number_egg+=1;
+        egg=new EGG[number_egg];
+        for(int i=0;i<number_egg;i++){
+            egg[i]=old_buffer[i];
+        }
+        delete [] old_buffer;
+
+        }
