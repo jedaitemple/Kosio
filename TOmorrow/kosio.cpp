@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 #include <sstream>
+#include <cstring>
 using namespace std;
 
 
@@ -62,11 +63,21 @@ void write_to_text(){
 //chetene ot text fail
 void read_to_text(){
   string line;
+   string token;
+
   ifstream myfile ("myfile.txt");
   if (myfile.is_open())
   {
     while ( getline (myfile,line) )
     {
+   stringstream ss(line);
+
+
+while (getline(ss,token, ','))
+{
+    cout<< token <<endl; 
+}
+
       cout << line << '\n';
     }
     myfile.close();
