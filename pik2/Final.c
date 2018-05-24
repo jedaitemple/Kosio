@@ -6,7 +6,7 @@
 #include<stdbool.h>
 
 #define NAMELEN 30 //Maximum characters for each name
-#define MAXNUMGRADES 5 //Maximum number of grades for each student
+#define MAXNUMGRADES 5 
  
  
 // LINKED LIST ----------------------------------------------------------------------------------------------------------------------
