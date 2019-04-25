@@ -1,0 +1,18 @@
+DROP TRIGGER if exists before_students_insert;
+delimiter |
+CREATE TRIGGER before_students_insert BEFORE INSERT ON students
+FOR EACH ROW
+BEGIN
+IF(CHAR_LENGTH(NEW.name) < 5)
+
+THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'greshka v imeto.';
+end if;
+
+IF(CHAR_LENGTH(NEW.phoneNumber) < 10)
+THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'greshka v nomera na telefona.';
+end if;
+END;
+|
+delimiter ;
+
+INSERT INTO `school_sport_clubs`.`coaches` (`name`, `egn`, `month_salary`, `hour_salary`) VALUES ('Ivan Iordanov Petrov', '7452123456', '1500', '14');
